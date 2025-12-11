@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu with Symbols</title>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .menu li {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .menu li i {
+    margin-right: 15px;
+    font-size: 18px;
+  }
+
+  .menu li:hover {
+    background-color: #007BFF;
+    color: #fff;
+  }
+
+  .submenu {
+    list-style: none;
+    padding-left: 40px;
+    display: none;
+    background-color: #f0f8ff;
+  }
+
+  .submenu li {
+    padding: 10px 0;
+  }
+
+  .menu li.active + .submenu {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<ul class="menu">
+  <li onclick="toggleSubmenu(this)"><i class="fas fa-home"></i> Home</li>
+  <ul class="submenu">
+    <li>Dashboard</li>
+    <li>Updates</li>
+  </ul>
+
+  <li onclick="toggleSubmenu(this)"><i class="fas fa-user"></i> Profile</li>
+  <ul class="submenu">
+    <li>Settings</li>
+    <li>Log out</li>
+  </ul>
+
+  <li><i class="fas fa-envelope"></i> Messages</li>
+  <li><i class="fas fa-cog"></i> Settings</li>
+</ul>
+
+<script>
+  function toggleSubmenu(el) {
+    el.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
